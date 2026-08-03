@@ -3,6 +3,7 @@
 import '#browser-preload';
 import './fonts.scss';
 import './i18n';
+import { initInteractionTracking } from './interaction/initInteractionTracking';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
@@ -27,6 +28,8 @@ import { configureAppStore } from './redux/store';
 import * as transactionsSlice from './transactions/transactionsSlice';
 import { redo, undo } from './undo';
 import * as usersSlice from './users/usersSlice';
+
+initInteractionTracking();
 
 const queryClient = new QueryClient();
 window.__TANSTACK_QUERY_CLIENT__ = queryClient;
