@@ -110,4 +110,5 @@ storybook-static
 actual.config.js
 
 
-.vite-temp
+.vite-temp/
+.vite-temp/*

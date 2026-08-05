@@ -2,12 +2,10 @@
 
 #####################################################
 # This startup script is used by the docker container
-# to check if the node_modules folder is empty and
-# if so, run yarn to install the dependencies.
+# to install dependencies (or refresh a stale host
+# node_modules mount) and start the browser app.
 #####################################################
 
-if [ ! -d "node_modules" ] || [ "$(ls -A node_modules)" = "" ]; then
-    yarn
-fi
+yarn install
 
 BROWSER=0 yarn start:browser
